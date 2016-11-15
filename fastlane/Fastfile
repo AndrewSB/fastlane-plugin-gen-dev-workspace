@@ -1,0 +1,3 @@
+lane :test do
+  gen_dev_workspace
+end
