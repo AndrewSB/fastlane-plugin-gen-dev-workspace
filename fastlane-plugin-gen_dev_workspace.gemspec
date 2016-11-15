@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = %q{asbreckenridge@me.com}
 
   spec.summary       = %q{Configures an xcworkspace with specified xcodeprojs}
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-gen_dev_workspace"
+  spec.homepage      = "https://github.com/AndrewSB/fastlane-plugin-gen_dev_workspace"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
