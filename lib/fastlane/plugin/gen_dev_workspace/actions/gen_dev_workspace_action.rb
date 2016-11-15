@@ -24,20 +24,21 @@ module Fastlane
 
       def self.available_options
         [
-          # FastlaneCore::ConfigItem.new(key: :your_option,
-          #                         env_name: "GEN_DEV_WORKSPACE_YOUR_OPTION",
-          #                      description: "A description of your option",
-          #                         optional: false,
-          #                             type: String)
+          FastlaneCore::ConfigItem.new(key: :xcworkspace,
+                                  env_name: "GEN_DEV_WORKSPACE_XCWORKSPACE",
+                               description: "The path to the development workspace",
+                                  optional: false,
+                                      type: String),
+          FastlaneCore::ConfigItem.new(key: :xcodeprojs,
+                                  env_name: "GEN_DEV_WORKSPACE_XCODEPROJS",
+                               description: "An array of xcodeprojs you want embedded into the workspace",
+                                  optional: true,
+                                      type: Array),
         ]
       end
 
       def self.is_supported?(platform)
-        # Adjust this if your plugin only works for a particular platform (iOS vs. Android, for example)
-        # See: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
-        #
-        # [:ios, :mac, :android].include?(platform)
-        true
+        [:ios, :mac].include?(platform)
       end
     end
   end
