@@ -2,6 +2,20 @@ module Fastlane
   module Actions
     class GenDevWorkspaceAction < Action
       def self.run(params)
+        xcworkspace = Xcodeproj::Workspace.new_from_xcworkspace(params[:xcworkspace])
+        xcodeprojs = params[:xcodeprojs]
+
+        case xcodeprojs
+        when Array
+          # empty the workspace here
+          xcodeprojs.each { |proj|
+            #
+            xcworkspace <<(proj)
+          }
+        else
+          raise "you didn't pass in an array of xcodeprojs"
+
+        workspace.save_as
         UI.message("The gen_dev_workspace plugin is working!")
       end
 
